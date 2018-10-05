@@ -13,7 +13,6 @@ yarn add translation-lib
 
 ## Usage
 ``` javascript
-// @flow
 import { setTranslations, getTranslatedText, setAppLanguage } from 'translation-lib';
 
 const translations = {
@@ -40,5 +39,6 @@ setAppLanguage('it').then(() => {
     // you choose key that is not available in your translations object
 });
 ```
-
-## Example
+## Contribution
+Feel free to submit a PR, but please, keep it simple :)
+### Thank you
