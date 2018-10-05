@@ -1,11 +1,12 @@
 // @flow
 const NO_TRANSLATION_FILES = 'no_translation_files';
 
-let appLanguage = 'en';
+let appLanguage = '';
 let appTranslations = {};
 
 export const setTranslations = (translations: {[locale: string]: Object}) => {
 	appTranslations = translations;
+	appLanguage = Object.keys(translations)[0];
 };
 
 export const getTranslatedText = (translationKey: string, options: Object) => {
