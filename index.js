@@ -9,13 +9,14 @@ export const setTranslations = (translations: {[locale: string]: Object}) => {
 	appLanguage = Object.keys(translations)[0];
 };
 
-export const getTranslatedText = (translationKey: string, options: Object) => {
+export const getTranslatedText = (translationKey: string, options?: Object) => {
 	const actualTranslations = appTranslations[appLanguage];
 	if (!actualTranslations) return NO_TRANSLATION_FILES;
 	if (!actualTranslations[translationKey]) return `${appLanguage}_${translationKey}`;
 	if (options) {
 		let translation = actualTranslations[translationKey];
 		Object.keys(options).map((key) => {
+			// $FlowFixMe
 			translation = translation.replace(`{{${key}}}`, options[key]);
 		});
 		return translation;
