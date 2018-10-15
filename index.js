@@ -34,4 +34,4 @@ export const setAppLanguage = (language: string): Promise<any> => {
 	return Promise.reject();
 };
 
-export const getAppLanguage = () => appLanguage || NOT_YET_SET;
+export const getAppLanguage = () => (appLanguage || NOT_YET_SET);
