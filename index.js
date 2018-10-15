@@ -1,5 +1,6 @@
 // @flow
 const NO_TRANSLATION_FILES = 'no_translation_files';
+const NOT_YET_SET = 'You forgot to set App language';
 
 let appLanguage = '';
 let appTranslations = {};
@@ -32,3 +33,5 @@ export const setAppLanguage = (language: string): Promise<any> => {
 	}
 	return Promise.reject();
 };
+
+export const getAppLanguage = () => appLanguage || NOT_YET_SET;
